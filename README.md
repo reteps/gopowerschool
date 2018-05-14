@@ -4,7 +4,7 @@ powerschool in go
 
 usage:
 
-```
+```go
 package main
 
 import (
