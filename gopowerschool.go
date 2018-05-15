@@ -28,14 +28,14 @@ func (client *PublicPortalServiceJSONPortType) CreateUserSessionAndStudent(usern
 		ServerInfo:        &ServerInfo{ApiVersion: response.Return_.UserSessionVO.ServerInfo.ApiVersion},
 		ServerCurrentTime: response.Return_.UserSessionVO.ServerCurrentTime,
 		UserType:          response.Return_.UserSessionVO.UserType}
-	return newSession, int64(response.Return_.UserSessionVO.StudentIDs[0]), nil
+	return &newSession, int64(response.Return_.UserSessionVO.StudentIDs[0]), nil
 }
 func (client *PublicPortalServiceJSONPortType) GetStudent(username, password string) (*StudentDataVO, error) {
 	session, userID, err := client.CreateUserSessionAndStudent(username, password)
 	if err != nil {
 		return nil, err
 	}
-	studentDataArguments := GetStudentData{UserSessionVO: &session, StudentIDs: []int64{studentID}, Qil: &QueryIncludeListVO{Includes: []int32{1}}}
+	studentDataArguments := GetStudentData{UserSessionVO: session, StudentIDs: []int64{userID}, Qil: &QueryIncludeListVO{Includes: []int32{1}}}
 	student, err := client.GetStudentData(&studentDataArguments)
 	if err != nil {
 		return nil, err
