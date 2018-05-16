@@ -7,7 +7,6 @@ import (
 	"crypto/tls"
 	"encoding/hex"
 	"encoding/xml"
-	//"errors"
 	"fmt"
 	"io"
 	"io/ioutil"
@@ -23,7 +22,7 @@ var _ time.Time
 var _ xml.Name
 
 type Locale struct {
-	XMLName xml.Name `xml:"locale"` //http://util.java/xsd locale"`
+	XMLName xml.Name `xml:"locale"`
 
 	ISO3Country            string `xml:"ISO3Country,omitempty"`
 	ISO3Language           string `xml:"ISO3Language,omitempty"`
@@ -278,7 +277,7 @@ type BaseResultsVO struct {
 }
 
 type MessageVO struct {
-	XMLName xml.Name `xml:"messageVOs"` //http://vo.rest.powerschool.pearson.com/xsd messageVOs"`
+	XMLName xml.Name `xml:"messageVOs"`
 
 	Description string `xml:"description,omitempty"`
 	Id          string `xml:"id,omitempty"`
@@ -287,7 +286,7 @@ type MessageVO struct {
 }
 
 type ResultsVO struct {
-	XMLName xml.Name `xml:"return"` //http://vo.rest.powerschool.pearson.com/xsd return"`
+	XMLName xml.Name `xml:"return"`
 
 	//	*BaseResultsVO
 	MessageVOs []*MessageVO `xml:"messageVOs,omitempty"`
@@ -326,7 +325,7 @@ type CourseRequestVO struct {
 }
 
 type CourseRequestRulesVO struct {
-	XMLName xml.Name `xml:"courseRequestRulesVO"` //http://vo.rest.powerschool.pearson.com/xsd courseRequestRulesVO"`
+	XMLName xml.Name `xml:"courseRequestRulesVO"`
 
 	Description string  `xml:"description,omitempty"`
 	MaxCredits  float64 `xml:"maxCredits,omitempty"`
@@ -521,7 +520,7 @@ type SectionEnrollmentVO struct {
 }
 
 type FeeBalanceVO struct {
-	XMLName xml.Name `xml:"feeBalance"` //http://vo.rest.powerschool.pearson.com/xsd feeBalance"`
+	XMLName xml.Name `xml:"feeBalance"`
 
 	Balance  float64 `xml:"balance,omitempty"`
 	Credit   float64 `xml:"credit,omitempty"`
@@ -624,8 +623,7 @@ type NotInSessionDayVO struct {
 }
 
 type NotificationSettingsVO struct {
-	XMLName xml.Name `xml:"notificationSettingsVO"` //http://vo.rest.powerschool.pearson.com/xsd notificationSettingsVO"`
-
+	XMLName xml.Name `xml:"notificationSettingsVO"`
 	ApplyToAllStudents  bool     `xml:"applyToAllStudents,omitempty"`
 	BalanceAlerts       bool     `xml:"balanceAlerts,omitempty"`
 	DetailedAssignments bool     `xml:"detailedAssignments,omitempty"`
@@ -769,7 +767,7 @@ type StandardGradeVO struct {
 }
 
 type StudentVO struct {
-	XMLName xml.Name `xml:"student"` //http://vo.rest.powerschool.pearson.com/xsd student"`
+	XMLName xml.Name `xml:"student"`
 
 	CurrentGPA             string    `xml:"currentGPA,omitempty"`
 	CurrentMealBalance     float64   `xml:"currentMealBalance,omitempty"`
@@ -811,7 +809,7 @@ type TermVO struct {
 }
 
 type UserSessionVO struct {
-	XMLName xml.Name `xml:"userSessionVO"` //http://vo.rest.powerschool.pearson.com/xsd userSessionVO"`
+	XMLName xml.Name `xml:"userSessionVO"`
 
 	Locale            *Locale     `xml:"locale,omitempty"`
 	ServerCurrentTime time.Time   `xml:"serverCurrentTime,omitempty"`
@@ -823,7 +821,7 @@ type UserSessionVO struct {
 }
 
 type QueryIncludeListVO struct {
-	XMLName xml.Name `xml:"http://vo.rest.powerschool.pearson.com/xsd qil"` //QueryIncludeListVO"`
+	XMLName xml.Name `xml:"http://vo.rest.powerschool.pearson.com/xsd qil"`
 
 	Includes []int32 `xml:"includes,omitempty"`
 }
@@ -864,7 +862,7 @@ type BulletinLite struct {
 }
 
 type ServerInfo struct {
-	XMLName xml.Name `xml:"serverInfo"` //http://model.rest.powerschool.pearson.com/xsd serverInfo"`
+	XMLName xml.Name `xml:"serverInfo"`
 
 	ApiVersion                  string    `xml:"apiVersion,omitempty"`
 	DayLightSavings             int32     `xml:"dayLightSavings,omitempty"`
