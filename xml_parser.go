@@ -288,13 +288,12 @@ type MessageVO struct {
 type ResultsVO struct {
 	XMLName xml.Name `xml:"return"`
 
-	//	*BaseResultsVO
 	MessageVOs []*MessageVO `xml:"messageVOs,omitempty"`
 
-	//CourseRequestGroupsVOs []*CourseRequestGroupVO `xml:"courseRequestGroupsVOs,omitempty"`
-	//CourseRequestRulesVO   *CourseRequestRulesVO   `xml:"courseRequestRulesVO,omitempty"`
-	StudentDataVOs []*StudentDataVO `xml:"studentDataVOs,omitempty"`
-	UserSessionVO  *UserSessionVO   `xml:"userSessionVO,omitempty"`
+	CourseRequestGroupsVOs []*CourseRequestGroupVO `xml:"courseRequestGroupsVOs,omitempty"`
+	CourseRequestRulesVO   *CourseRequestRulesVO   `xml:"courseRequestRulesVO,omitempty"`
+	StudentDataVOs         []*StudentDataVO        `xml:"studentDataVOs,omitempty"`
+	UserSessionVO          *UserSessionVO          `xml:"userSessionVO,omitempty"`
 }
 
 type CourseRequestGroupVO struct {

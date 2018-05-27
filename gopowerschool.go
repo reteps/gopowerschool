@@ -38,7 +38,7 @@ func (client *PublicPortalServiceJSONPortType) GetStudent(username, password str
 	studentDataArguments := GetStudentData{UserSessionVO: session, StudentIDs: []int64{userID}, Qil: &QueryIncludeListVO{Includes: []int32{1}}}
 	student, err := client.GetStudentData(&studentDataArguments)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	return student.Return_.StudentDataVOs[0], nil
 }
