@@ -13,7 +13,7 @@ func Client(url string) *PublicPortalServiceJSONPortType {
 	return NewPublicPortalServiceJSONPortType(wsdl_url, true, &auth)
 }
 func (client *PublicPortalServiceJSONPortType) CreateUserSessionAndStudent(username, password string) (*UserSessionVO, int64, error) {
-	
+
 	PublicPortalLogin := LoginToPublicPortal{Username: username, Password: password}
 	response, err := client.LoginToPublicPortal(&PublicPortalLogin)
 	if err != nil {
@@ -38,7 +38,7 @@ func (client *PublicPortalServiceJSONPortType) GetStudent(username, password str
 	studentDataArguments := GetStudentData{UserSessionVO: session, StudentIDs: []int64{userID}, Qil: &QueryIncludeListVO{Includes: []int32{1}}}
 	student, err := client.GetStudentData(&studentDataArguments)
 	if err != nil {
-		return nil, err
+		panic(err)
 	}
 	return student.Return_.StudentDataVOs[0], nil
 }
