@@ -22,7 +22,7 @@ var _ time.Time
 var _ xml.Name
 
 type Locale struct {
-	XMLName xml.Name `xml:"locale"`
+	XMLName xml.Name `xml:"locale" json:"-"`
 
 	ISO3Country            string `xml:"ISO3Country,omitempty"`
 	ISO3Language           string `xml:"ISO3Language,omitempty"`
@@ -42,23 +42,23 @@ type Locale struct {
 
 // Workaround
 type ExSet struct {
-	XMLName xml.Name `xml:"http://util.java/xsd extensionKeys"`
+	XMLName xml.Name `xml:"http://util.java/xsd extensionKeys"  json:"-"`
 
 	Empty bool `xml:"empty,omitempty"`
 }
 type UASet struct {
-	XMLName xml.Name `xml:"http://util.java/xsd unicodeLocaleAttributes"`
+	XMLName xml.Name `xml:"http://util.java/xsd unicodeLocaleAttributes"  json:"-"`
 
 	Empty bool `xml:"empty,omitempty"`
 }
 
 type ULSet struct {
-	XMLName xml.Name `xml:"http://util.java/xsd unicodeLocaleKeys"`
+	XMLName xml.Name `xml:"http://util.java/xsd unicodeLocaleKeys"  json:"-"`
 
 	Empty bool `xml:"empty,omitempty"`
 }
 type Login struct {
-	XMLName xml.Name `xml:"http://publicportal.rest.powerschool.pearson.com/xsd login"`
+	XMLName xml.Name `xml:"http://publicportal.rest.powerschool.pearson.com/xsd login" json:"-"`
 
 	Username string `xml:"username,omitempty"`
 	Password string `xml:"password,omitempty"`
@@ -66,38 +66,38 @@ type Login struct {
 }
 
 type LoginResponse struct {
-	XMLName xml.Name `xml:"http://publicportal.rest.powerschool.pearson.com/xsd loginResponse"`
+	XMLName xml.Name `xml:"http://publicportal.rest.powerschool.pearson.com/xsd loginResponse" json:"-"`
 
 	Return_ *ResultsVO `xml:"return,omitempty"`
 }
 
 type Logout struct {
-	XMLName xml.Name `xml:"http://publicportal.rest.powerschool.pearson.com/xsd logout"`
+	XMLName xml.Name `xml:"http://publicportal.rest.powerschool.pearson.com/xsd logout" json:"-"`
 
 	UserSessionVO *UserSessionVO `xml:"userSessionVO,omitempty"`
 }
 
 type LogoutResponse struct {
-	XMLName xml.Name `xml:"http://publicportal.rest.powerschool.pearson.com/xsd logoutResponse"`
+	XMLName xml.Name `xml:"http://publicportal.rest.powerschool.pearson.com/xsd logoutResponse" json:"-"`
 
 	Return_ *ResultsVO `xml:"return,omitempty"`
 }
 
 type GetSchoolMapBySchoolNumber struct {
-	XMLName xml.Name `xml:"http://publicportal.rest.powerschool.pearson.com/xsd getSchoolMapBySchoolNumber"`
+	XMLName xml.Name `xml:"http://publicportal.rest.powerschool.pearson.com/xsd getSchoolMapBySchoolNumber" json:"-"`
 
 	UserSessionVO *UserSessionVO `xml:"userSessionVO,omitempty"`
 	SchoolNumber  int64          `xml:"schoolNumber,omitempty"`
 }
 
 type GetSchoolMapBySchoolNumberResponse struct {
-	XMLName xml.Name `xml:"http://publicportal.rest.powerschool.pearson.com/xsd getSchoolMapBySchoolNumberResponse"`
+	XMLName xml.Name `xml:"http://publicportal.rest.powerschool.pearson.com/xsd getSchoolMapBySchoolNumberResponse" json:"-"`
 
 	Return_ []byte `xml:"return,omitempty"`
 }
 
 type GetStudentData struct {
-	XMLName xml.Name `xml:"http://publicportal.rest.powerschool.pearson.com/xsd getStudentData"`
+	XMLName xml.Name `xml:"http://publicportal.rest.powerschool.pearson.com/xsd getStudentData" json:"-"`
 
 	UserSessionVO *UserSessionVO      `xml:"userSessionVO,omitempty"`
 	StudentIDs    []int64             `xml:"studentIDs,omitempty"`
@@ -105,38 +105,38 @@ type GetStudentData struct {
 }
 
 type GetStudentDataResponse struct {
-	XMLName xml.Name `xml:"http://publicportal.rest.powerschool.pearson.com/xsd getStudentDataResponse"`
+	XMLName xml.Name `xml:"http://publicportal.rest.powerschool.pearson.com/xsd getStudentDataResponse" json:"-"`
 
 	Return_ *ResultsVO `xml:"return,omitempty"`
 }
 
 type GetStudentPhoto struct {
-	XMLName xml.Name `xml:"http://publicportal.rest.powerschool.pearson.com/xsd getStudentPhoto"`
+	XMLName xml.Name `xml:"http://publicportal.rest.powerschool.pearson.com/xsd getStudentPhoto" json:"-"`
 
 	UserSessionVO *UserSessionVO `xml:"userSessionVO,omitempty"`
 	StudentID     int64          `xml:"studentID,omitempty"`
 }
 
 type GetStudentPhotoResponse struct {
-	XMLName xml.Name `xml:"http://publicportal.rest.powerschool.pearson.com/xsd getStudentPhotoResponse"`
+	XMLName xml.Name `xml:"http://publicportal.rest.powerschool.pearson.com/xsd getStudentPhotoResponse" json:"-"`
 
 	Return_ []byte `xml:"return,omitempty"`
 }
 
 type RecoverUsername struct {
-	XMLName xml.Name `xml:"http://publicportal.rest.powerschool.pearson.com/xsd recoverUsername"`
+	XMLName xml.Name `xml:"http://publicportal.rest.powerschool.pearson.com/xsd recoverUsername" json:"-"`
 
 	EmailAddress string `xml:"emailAddress,omitempty"`
 }
 
 type RecoverUsernameResponse struct {
-	XMLName xml.Name `xml:"http://publicportal.rest.powerschool.pearson.com/xsd recoverUsernameResponse"`
+	XMLName xml.Name `xml:"http://publicportal.rest.powerschool.pearson.com/xsd recoverUsernameResponse" json:"-"`
 
 	Return_ *MessageVO `xml:"return,omitempty"`
 }
 
 type RecoverPassword struct {
-	XMLName xml.Name `xml:"http://publicportal.rest.powerschool.pearson.com/xsd recoverPassword"`
+	XMLName xml.Name `xml:"http://publicportal.rest.powerschool.pearson.com/xsd recoverPassword" json:"-"`
 
 	UserType      int32  `xml:"userType,omitempty"`
 	UserName      string `xml:"userName,omitempty"`
@@ -145,26 +145,26 @@ type RecoverPassword struct {
 }
 
 type RecoverPasswordResponse struct {
-	XMLName xml.Name `xml:"http://publicportal.rest.powerschool.pearson.com/xsd recoverPasswordResponse"`
+	XMLName xml.Name `xml:"http://publicportal.rest.powerschool.pearson.com/xsd recoverPasswordResponse" json:"-"`
 
 	Return_ *PasswordResetVO `xml:"return,omitempty"`
 }
 
 type LinkDeviceTokenToUser struct {
-	XMLName xml.Name `xml:"http://publicportal.rest.powerschool.pearson.com/xsd linkDeviceTokenToUser"`
+	XMLName xml.Name `xml:"http://publicportal.rest.powerschool.pearson.com/xsd linkDeviceTokenToUser" json:"-"`
 
 	UserSessionVO *UserSessionVO `xml:"userSessionVO,omitempty"`
 	DeviceToken   string         `xml:"deviceToken,omitempty"`
 }
 
 type LinkDeviceTokenToUserResponse struct {
-	XMLName xml.Name `xml:"http://publicportal.rest.powerschool.pearson.com/xsd linkDeviceTokenToUserResponse"`
+	XMLName xml.Name `xml:"http://publicportal.rest.powerschool.pearson.com/xsd linkDeviceTokenToUserResponse" json:"-"`
 
 	Return_ *MessageVO `xml:"return,omitempty"`
 }
 
 type StoreCourseRequests struct {
-	XMLName xml.Name `xml:"http://publicportal.rest.powerschool.pearson.com/xsd storeCourseRequests"`
+	XMLName xml.Name `xml:"http://publicportal.rest.powerschool.pearson.com/xsd storeCourseRequests" json:"-"`
 
 	UserSessionVO       *UserSessionVO          `xml:"userSessionVO,omitempty"`
 	StudentId           int64                   `xml:"studentId,omitempty"`
@@ -172,64 +172,64 @@ type StoreCourseRequests struct {
 }
 
 type StoreCourseRequestsResponse struct {
-	XMLName xml.Name `xml:"http://publicportal.rest.powerschool.pearson.com/xsd storeCourseRequestsResponse"`
+	XMLName xml.Name `xml:"http://publicportal.rest.powerschool.pearson.com/xsd storeCourseRequestsResponse" json:"-"`
 
 	Return_ *ResultsVO `xml:"return,omitempty"`
 }
 
 type GetCredentialComplexityRules struct {
-	XMLName xml.Name `xml:"http://publicportal.rest.powerschool.pearson.com/xsd getCredentialComplexityRules"`
+	XMLName xml.Name `xml:"http://publicportal.rest.powerschool.pearson.com/xsd getCredentialComplexityRules" json:"-"`
 
 	UserType int32 `xml:"userType,omitempty"`
 }
 
 type GetCredentialComplexityRulesResponse struct {
-	XMLName xml.Name `xml:"http://publicportal.rest.powerschool.pearson.com/xsd getCredentialComplexityRulesResponse"`
+	XMLName xml.Name `xml:"http://publicportal.rest.powerschool.pearson.com/xsd getCredentialComplexityRulesResponse" json:"-"`
 
 	Return_ *CredentialComplexityRulesVO `xml:"return,omitempty"`
 }
 
 type StoreNotificationSettings struct {
-	XMLName xml.Name `xml:"http://publicportal.rest.powerschool.pearson.com/xsd storeNotificationSettings"`
+	XMLName xml.Name `xml:"http://publicportal.rest.powerschool.pearson.com/xsd storeNotificationSettings" json:"-"`
 
 	UserSessionVO *UserSessionVO          `xml:"userSessionVO,omitempty"`
 	Ns            *NotificationSettingsVO `xml:"ns,omitempty"`
 }
 
 type StoreNotificationSettingsResponse struct {
-	XMLName xml.Name `xml:"http://publicportal.rest.powerschool.pearson.com/xsd storeNotificationSettingsResponse"`
+	XMLName xml.Name `xml:"http://publicportal.rest.powerschool.pearson.com/xsd storeNotificationSettingsResponse" json:"-"`
 
 	Return_ *ResultsVO `xml:"return,omitempty"`
 }
 
 type LogoutAndDelinkDeviceToken struct {
-	XMLName xml.Name `xml:"http://publicportal.rest.powerschool.pearson.com/xsd logoutAndDelinkDeviceToken"`
+	XMLName xml.Name `xml:"http://publicportal.rest.powerschool.pearson.com/xsd logoutAndDelinkDeviceToken" json:"-"`
 
 	UserSessionVO *UserSessionVO `xml:"userSessionVO,omitempty"`
 	DeviceToken   string         `xml:"deviceToken,omitempty"`
 }
 
 type LogoutAndDelinkDeviceTokenResponse struct {
-	XMLName xml.Name `xml:"http://publicportal.rest.powerschool.pearson.com/xsd logoutAndDelinkDeviceTokenResponse"`
+	XMLName xml.Name `xml:"http://publicportal.rest.powerschool.pearson.com/xsd logoutAndDelinkDeviceTokenResponse" json:"-"`
 
 	Return_ *ResultsVO `xml:"return,omitempty"`
 }
 
 type LoginToPublicPortal struct {
-	XMLName xml.Name `xml:"http://publicportal.rest.powerschool.pearson.com/xsd loginToPublicPortal"`
+	XMLName xml.Name `xml:"http://publicportal.rest.powerschool.pearson.com/xsd loginToPublicPortal" json:"-"`
 
 	Username string `xml:"username,omitempty"`
 	Password string `xml:"password,omitempty"`
 }
 
 type LoginToPublicPortalResponse struct {
-	XMLName xml.Name `xml:"http://publicportal.rest.powerschool.pearson.com/xsd loginToPublicPortalResponse"`
+	XMLName xml.Name `xml:"http://publicportal.rest.powerschool.pearson.com/xsd loginToPublicPortalResponse" json:"-"`
 
 	Return_ *ResultsVO `xml:"return,omitempty"`
 }
 
 type GetStartStopTimeForAllSections struct {
-	XMLName xml.Name `xml:"http://publicportal.rest.powerschool.pearson.com/xsd getStartStopTimeForAllSections"`
+	XMLName xml.Name `xml:"http://publicportal.rest.powerschool.pearson.com/xsd getStartStopTimeForAllSections" json:"-"`
 
 	UserSessionVO *UserSessionVO `xml:"userSessionVO,omitempty"`
 	StudentIDs    []int64        `xml:"studentIDs,omitempty"`
@@ -238,26 +238,26 @@ type GetStartStopTimeForAllSections struct {
 }
 
 type GetStartStopTimeForAllSectionsResponse struct {
-	XMLName xml.Name `xml:"http://publicportal.rest.powerschool.pearson.com/xsd getStartStopTimeForAllSectionsResponse"`
+	XMLName xml.Name `xml:"http://publicportal.rest.powerschool.pearson.com/xsd getStartStopTimeForAllSectionsResponse" json:"-"`
 
 	Return_ *ResultsVO `xml:"return,omitempty"`
 }
 
 type GetAllCourseRequests struct {
-	XMLName xml.Name `xml:"http://publicportal.rest.powerschool.pearson.com/xsd getAllCourseRequests"`
+	XMLName xml.Name `xml:"http://publicportal.rest.powerschool.pearson.com/xsd getAllCourseRequests" json:"-"`
 
 	UserSessionVO *UserSessionVO `xml:"userSessionVO,omitempty"`
 	StudentId     int64          `xml:"studentId,omitempty"`
 }
 
 type GetAllCourseRequestsResponse struct {
-	XMLName xml.Name `xml:"http://publicportal.rest.powerschool.pearson.com/xsd getAllCourseRequestsResponse"`
+	XMLName xml.Name `xml:"http://publicportal.rest.powerschool.pearson.com/xsd getAllCourseRequestsResponse" json:"-"`
 
 	Return_ *ResultsVO `xml:"return,omitempty"`
 }
 
 type SendPasswordRecoveryEmail struct {
-	XMLName xml.Name `xml:"http://publicportal.rest.powerschool.pearson.com/xsd sendPasswordRecoveryEmail"`
+	XMLName xml.Name `xml:"http://publicportal.rest.powerschool.pearson.com/xsd sendPasswordRecoveryEmail" json:"-"`
 
 	UserType     int32  `xml:"userType,omitempty"`
 	UserName     string `xml:"userName,omitempty"`
@@ -265,19 +265,19 @@ type SendPasswordRecoveryEmail struct {
 }
 
 type SendPasswordRecoveryEmailResponse struct {
-	XMLName xml.Name `xml:"http://publicportal.rest.powerschool.pearson.com/xsd sendPasswordRecoveryEmailResponse"`
+	XMLName xml.Name `xml:"http://publicportal.rest.powerschool.pearson.com/xsd sendPasswordRecoveryEmailResponse" json:"-"`
 
 	Return_ *MessageVO `xml:"return,omitempty"`
 }
 
 type BaseResultsVO struct {
-	XMLName xml.Name `xml:"http://vo.rest.powerschool.pearson.com/xsd BaseResultsVO"`
+	XMLName xml.Name `xml:"http://vo.rest.powerschool.pearson.com/xsd BaseResultsVO" json:"-"`
 
 	MessageVOs []*MessageVO `xml:"messagesVO,omitempty"`
 }
 
 type MessageVO struct {
-	XMLName xml.Name `xml:"messageVOs"`
+	XMLName xml.Name `xml:"messageVOs" json:"-"`
 
 	Description string `xml:"description,omitempty"`
 	Id          string `xml:"id,omitempty"`
@@ -286,7 +286,7 @@ type MessageVO struct {
 }
 
 type ResultsVO struct {
-	XMLName xml.Name `xml:"return"`
+	XMLName xml.Name `xml:"return" json:"-"`
 
 	MessageVOs []*MessageVO `xml:"messageVOs,omitempty"`
 
@@ -297,7 +297,7 @@ type ResultsVO struct {
 }
 
 type CourseRequestGroupVO struct {
-	XMLName xml.Name `xml:"http://vo.rest.powerschool.pearson.com/xsd CourseRequestGroupVO"`
+	XMLName xml.Name `xml:"http://vo.rest.powerschool.pearson.com/xsd CourseRequestGroupVO" json:"-"`
 
 	Courses        []*CourseRequestVO `xml:"courses,omitempty"`
 	Description    string             `xml:"description,omitempty"`
@@ -316,7 +316,7 @@ type CourseRequestGroupVO struct {
 }
 
 type CourseRequestVO struct {
-	XMLName xml.Name `xml:"http://vo.rest.powerschool.pearson.com/xsd CourseRequestVO"`
+	XMLName xml.Name `xml:"http://vo.rest.powerschool.pearson.com/xsd CourseRequestVO" json:"-"`
 
 	CourseName   string  `xml:"courseName,omitempty"`
 	CourseNumber string  `xml:"courseNumber,omitempty"`
@@ -324,7 +324,7 @@ type CourseRequestVO struct {
 }
 
 type CourseRequestRulesVO struct {
-	XMLName xml.Name `xml:"courseRequestRulesVO"`
+	XMLName xml.Name `xml:"courseRequestRulesVO" json:"-"`
 
 	Description string  `xml:"description,omitempty"`
 	MaxCredits  float64 `xml:"maxCredits,omitempty"`
@@ -369,7 +369,7 @@ type StudentDataVO struct {
 }
 
 type ActivityVO struct {
-	XMLName xml.Name `xml:"http://vo.rest.powerschool.pearson.com/xsd ActivityVO"`
+	XMLName xml.Name `xml:"http://vo.rest.powerschool.pearson.com/xsd ActivityVO" json:"-"`
 
 	Category string `xml:"category,omitempty"`
 	Id       int64  `xml:"id,omitempty"`
@@ -378,7 +378,7 @@ type ActivityVO struct {
 }
 
 type FinalGradeVO struct {
-	XMLName xml.Name `xml:"finalGrades"` //FinalGradeVO"` //http://vo.rest.powerschool.pearson.com/xsd FinalGradeVO"`
+	XMLName xml.Name `xml:"finalGrades" json:"-"`
 
 	CommentValue    string `xml:"commentValue,omitempty"`
 	DateStored      string/*time.Time*/ `xml:"dateStored,omitempty"`
@@ -391,7 +391,7 @@ type FinalGradeVO struct {
 }
 
 type ArchivedFinalGradeVO struct {
-	XMLName xml.Name `xml:"http://vo.rest.powerschool.pearson.com/xsd ArchivedFinalGradeVO"`
+	XMLName xml.Name `xml:"http://vo.rest.powerschool.pearson.com/xsd ArchivedFinalGradeVO" json:"-"`
 
 	*FinalGradeVO
 
@@ -408,7 +408,7 @@ type ArchivedFinalGradeVO struct {
 }
 
 type AsmtCatVO struct {
-	XMLName xml.Name `xml:"assignmentCategories"` //http://vo.rest.powerschool.pearson.com/xsd assignmentCategories"`
+	XMLName xml.Name `xml:"assignmentCategories" json:"-"`
 
 	Abbreviation  string `xml:"abbreviation,omitempty"`
 	Description   string `xml:"description,omitempty"`
@@ -418,7 +418,7 @@ type AsmtCatVO struct {
 }
 
 type AssignmentScoreVO struct {
-	XMLName xml.Name `xml:"assignmentScores"` //http://vo.rest.powerschool.pearson.com/xsd AssignmentScoreVO"`
+	XMLName xml.Name `xml:"assignmentScores" json:"-"`
 
 	AssignmentId  int64  `xml:"assignmentId,omitempty"`
 	Collected     bool   `xml:"collected,omitempty"`
@@ -435,7 +435,7 @@ type AssignmentScoreVO struct {
 }
 
 type AssignmentVO struct {
-	XMLName xml.Name `xml:"assignments"` //http://vo.rest.powerschool.pearson.com/xsd AssignmentVO"`
+	XMLName xml.Name `xml:"assignments" json:"-"`
 
 	Abbreviation          string    `xml:"abbreviation,omitempty"`
 	AdditionalCategoryIds []int32   `xml:"additionalCategoryIds,omitempty"`
@@ -459,7 +459,7 @@ type AssignmentVO struct {
 }
 
 type AttendanceVO struct {
-	XMLName xml.Name `xml:"attendance"` //http://vo.rest.powerschool.pearson.com/xsd AttendanceVO"`
+	XMLName xml.Name `xml:"attendance" json:"-"`
 
 	AdaValueCode    float64   `xml:"adaValueCode,omitempty"`
 	AdaValueTime    float64   `xml:"adaValueTime,omitempty"`
@@ -481,7 +481,7 @@ type AttendanceVO struct {
 }
 
 type AttendanceCodeVO struct {
-	XMLName xml.Name `xml:"attendanceCodes"` //http://vo.rest.powerschool.pearson.com/xsd AttendanceCodeVO"`
+	XMLName xml.Name `xml:"attendanceCodes" json:"-"`
 
 	AttCode     string `xml:"attCode,omitempty"`
 	CodeType    int32  `xml:"codeType,omitempty"`
@@ -493,7 +493,7 @@ type AttendanceCodeVO struct {
 }
 
 type CitizenCodeVO struct {
-	XMLName xml.Name `xml:"citizenCodes"` //http://vo.rest.powerschool.pearson.com/xsd CitizenCodeVO"`
+	XMLName xml.Name `xml:"citizenCodes" json:"-"`
 
 	CodeName    string `xml:"codeName,omitempty"`
 	Description string `xml:"description,omitempty"`
@@ -502,7 +502,7 @@ type CitizenCodeVO struct {
 }
 
 type CitizenGradeVO struct {
-	XMLName xml.Name `xml:"citizenGrades"` //http://vo.rest.powerschool.pearson.com/xsd CitizenGradeVO"`
+	XMLName xml.Name `xml:"citizenGrades" json:"-"`
 
 	CodeId          int64 `xml:"codeId,omitempty"`
 	ReportingTermId int64 `xml:"reportingTermId,omitempty"`
@@ -511,7 +511,7 @@ type CitizenGradeVO struct {
 }
 
 type SectionEnrollmentVO struct {
-	XMLName xml.Name `xml:"enrollments"` //http://vo.rest.powerschool.pearson.com/xsd SectionEnrollmentVO"`
+	XMLName xml.Name `xml:"enrollments" json:"-"`
 
 	EndDate      time.Time `xml:"endDate,omitempty"`
 	EnrollStatus int32     `xml:"enrollStatus,omitempty"`
@@ -520,7 +520,7 @@ type SectionEnrollmentVO struct {
 }
 
 type FeeBalanceVO struct {
-	XMLName xml.Name `xml:"feeBalance"`
+	XMLName xml.Name `xml:"feeBalance" json:"-"`
 
 	Balance  float64 `xml:"balance,omitempty"`
 	Credit   float64 `xml:"credit,omitempty"`
@@ -531,7 +531,7 @@ type FeeBalanceVO struct {
 }
 
 type FeeTransactionVO struct {
-	XMLName xml.Name `xml:"feeTransactions"` //http://vo.rest.powerschool.pearson.com/xsd FeeTransactionVO"`
+	XMLName xml.Name `xml:"feeTransactions" json:"-"`
 
 	Adjustment         float64   `xml:"adjustment,omitempty"`
 	CourseName         string    `xml:"courseName,omitempty"`
@@ -559,7 +559,7 @@ type FeeTransactionVO struct {
 }
 
 type FeeTypeVO struct {
-	XMLName xml.Name `xml:"feeTypes"` //http://vo.rest.powerschool.pearson.com/xsd FeeTypeVO"`
+	XMLName xml.Name `xml:"feeTypes" json:"-"`
 
 	Descript        string `xml:"descript,omitempty"`
 	FeeCategoryName string `xml:"feeCategoryName,omitempty"`
@@ -570,7 +570,7 @@ type FeeTypeVO struct {
 }
 
 type GradeScaleVO struct {
-	XMLName xml.Name `xml:"gradeScales"` //http://vo.rest.powerschool.pearson.com/xsd GradeScaleVO"`
+	XMLName xml.Name `xml:"gradeScales" json:"-"`
 
 	Description      string              `xml:"description,omitempty"`
 	GradeBookType    int32               `xml:"gradeBookType,omitempty"`
@@ -585,7 +585,7 @@ type GradeScaleVO struct {
 }
 
 type GradeScaleItemVO struct {
-	XMLName xml.Name `xml:"http://vo.rest.powerschool.pearson.com/xsd GradeScaleItemVO"`
+	XMLName xml.Name `xml:"http://vo.rest.powerschool.pearson.com/xsd GradeScaleItemVO" json:"-"`
 
 	CutoffPercent     float64 `xml:"cutoffPercent,omitempty"`
 	DefaultZeroCutoff bool    `xml:"defaultZeroCutoff,omitempty"`
@@ -599,7 +599,7 @@ type GradeScaleItemVO struct {
 }
 
 type LunchTransactionVO struct {
-	XMLName xml.Name `xml:"lunchTransactions"` //http://vo.rest.powerschool.pearson.com/xsd LunchTransactionVO"`
+	XMLName xml.Name `xml:"lunchTransactions" json:"-"`
 
 	Cash        float64   `xml:"cash,omitempty"`
 	Credit      float64   `xml:"credit,omitempty"`
@@ -613,7 +613,7 @@ type LunchTransactionVO struct {
 }
 
 type NotInSessionDayVO struct {
-	XMLName xml.Name `xml:"notInSessionDays"` //http://vo.rest.powerschool.pearson.com/xsd NotInSessionDayVO"`
+	XMLName xml.Name `xml:"notInSessionDays" json:"-"`
 
 	CalType      string    `xml:"calType,omitempty"`
 	CalendarDay  time.Time `xml:"calendarDay,omitempty"`
@@ -623,7 +623,7 @@ type NotInSessionDayVO struct {
 }
 
 type NotificationSettingsVO struct {
-	XMLName             xml.Name `xml:"notificationSettingsVO"`
+	XMLName             xml.Name `xml:"notificationSettingsVO" json:"-"`
 	ApplyToAllStudents  bool     `xml:"applyToAllStudents,omitempty"`
 	BalanceAlerts       bool     `xml:"balanceAlerts,omitempty"`
 	DetailedAssignments bool     `xml:"detailedAssignments,omitempty"`
@@ -638,7 +638,7 @@ type NotificationSettingsVO struct {
 }
 
 type PeriodVO struct {
-	XMLName xml.Name `xml:"periods"` //http:vo.rest.powerschool.pearson.com/xsd PeriodVO"`
+	XMLName xml.Name `xml:"periods" json:"-"`
 
 	Abbreviation string `xml:"abbreviation,omitempty"`
 	Id           int64  `xml:"id,omitempty"`
@@ -650,7 +650,7 @@ type PeriodVO struct {
 }
 
 type SchoolVO struct {
-	XMLName xml.Name `xml:"schools"` //http:vo.rest.powerschool.pearson.com/xsd SchoolVO"`
+	XMLName xml.Name `xml:"schools" json:"-"`
 
 	Abbreviation          string              `xml:"abbreviation,omitempty"`
 	Address               string              `xml:"address,omitempty"`
@@ -675,7 +675,7 @@ type SchoolVO struct {
 }
 
 type DisabledFeaturesVO struct {
-	XMLName xml.Name `xml:"disabledFeatures"` //http://vo.rest.powerschool.pearson.com/xsd disabledFeatures"`
+	XMLName xml.Name `xml:"disabledFeatures" json:"-"`
 
 	Activities  bool `xml:"activities,omitempty"`
 	Assignments bool `xml:"assignments,omitempty"`
@@ -690,7 +690,7 @@ type DisabledFeaturesVO struct {
 }
 
 type ReportingTermVO struct {
-	XMLName xml.Name `xml:"reportingTerms"` //http:vo.rest.powerschool.pearson.com/xsd ReportingTermVO"`
+	XMLName xml.Name `xml:"reportingTerms" json:"-"`
 
 	Abbreviation     string    `xml:"abbreviation,omitempty"`
 	EndDate          time.Time `xml:"endDate,omitempty"`
@@ -707,7 +707,7 @@ type ReportingTermVO struct {
 }
 
 type SectionVO struct {
-	XMLName xml.Name `xml:"sections"` //http:vo.rest.powerschool.pearson.com/xsd SectionVO"`
+	XMLName xml.Name `xml:"sections" json:"-"`
 
 	CourseCode        string                 `xml:"courseCode,omitempty"`
 	Dcid              int64                  `xml:"dcid,omitempty"`
@@ -727,7 +727,7 @@ type SectionVO struct {
 }
 
 type StartStopDateVO struct {
-	XMLName xml.Name `xml:"startStopDates"` //http://vo.rest.powerschool.pearson.com/xsd StartStopDateVO"`
+	XMLName xml.Name `xml:"startStopDates" json:"-"`
 
 	SectionEnrollmentId int64     `xml:"sectionEnrollmentId,omitempty"`
 	Start               time.Time `xml:"start,omitempty"`
@@ -735,7 +735,7 @@ type StartStopDateVO struct {
 }
 
 type StandardVO struct {
-	XMLName xml.Name `xml:"standards"` //http://vo.rest.powerschool.pearson.com/xsd StandardVO"`
+	XMLName xml.Name `xml:"standards" json:"-"`
 
 	Description      string `xml:"description,omitempty"`
 	GradeBookType    int32  `xml:"gradeBookType,omitempty"`
@@ -748,7 +748,7 @@ type StandardVO struct {
 }
 
 type StandardGradeVO struct {
-	XMLName xml.Name `xml:"standardsGrades"` //http://vo.rest.powerschool.pearson.com/xsd StandardGradeVO"`
+	XMLName xml.Name `xml:"standardsGrades" json:"-"`
 
 	Comment            string    `xml:"comment,omitempty"`
 	CommentLastUpdated time.Time `xml:"commentLastUpdated,omitempty"`
@@ -767,7 +767,7 @@ type StandardGradeVO struct {
 }
 
 type StudentVO struct {
-	XMLName xml.Name `xml:"student"`
+	XMLName xml.Name `xml:"student" json:"-"`
 
 	CurrentGPA             string    `xml:"currentGPA,omitempty"`
 	CurrentMealBalance     float64   `xml:"currentMealBalance,omitempty"`
@@ -787,7 +787,7 @@ type StudentVO struct {
 }
 
 type TeacherVO struct {
-	XMLName xml.Name `xml:"teachers"` //http://vo.rest.powerschool.pearson.com/xsd TeacherV"`
+	XMLName xml.Name `xml:"teachers" json:"-"`
 
 	Email       string `xml:"email,omitempty"`
 	FirstName   string `xml:"firstName,omitempty"`
@@ -797,7 +797,7 @@ type TeacherVO struct {
 }
 
 type TermVO struct {
-	XMLName xml.Name `xml:"terms"` //http://vo.rest.powerschool.pearson.com/xsd TermVO"`
+	XMLName xml.Name `xml:"terms" json:"-"`
 
 	Abbrev       string    `xml:"abbrev,omitempty"`
 	EndDate      time.Time `xml:"endDate,omitempty"`
@@ -809,7 +809,7 @@ type TermVO struct {
 }
 
 type UserSessionVO struct {
-	XMLName xml.Name `xml:"userSessionVO"`
+	XMLName xml.Name `xml:"userSessionVO" json:"-"`
 
 	Locale            *Locale     `xml:"locale,omitempty"`
 	ServerCurrentTime time.Time   `xml:"serverCurrentTime,omitempty"`
@@ -821,7 +821,7 @@ type UserSessionVO struct {
 }
 
 type QueryIncludeListVO struct {
-	XMLName xml.Name `xml:"http://vo.rest.powerschool.pearson.com/xsd qil"`
+	XMLName xml.Name `xml:"http://vo.rest.powerschool.pearson.com/xsd qil" json:"-"`
 
 	Includes []int32 `xml:"includes,omitempty"`
 }
@@ -837,7 +837,7 @@ type PasswordResetVO struct {
 }
 
 type CredentialComplexityRulesVO struct {
-	XMLName xml.Name `xml:"http://vo.rest.powerschool.pearson.com/xsd CredentialComplexityRulesVO"`
+	XMLName xml.Name `xml:"http://vo.rest.powerschool.pearson.com/xsd CredentialComplexityRulesVO" json:"-"`
 
 	*BaseResultsVO
 
@@ -849,7 +849,7 @@ type CredentialComplexityRulesVO struct {
 }
 
 type BulletinLite struct {
-	XMLName xml.Name `xml:"http://model.rest.powerschool.pearson.com/xsd BulletinLite"`
+	XMLName xml.Name `xml:"http://model.rest.powerschool.pearson.com/xsd BulletinLite" json:"-"`
 
 	Audience  int64     `xml:"audience,omitempty"`
 	Body      string    `xml:"body,omitempty"`
@@ -862,7 +862,7 @@ type BulletinLite struct {
 }
 
 type ServerInfo struct {
-	XMLName xml.Name `xml:"serverInfo"`
+	XMLName xml.Name `xml:"serverInfo" json:"-"`
 
 	ApiVersion                  string    `xml:"apiVersion,omitempty"`
 	DayLightSavings             int32     `xml:"dayLightSavings,omitempty"`
