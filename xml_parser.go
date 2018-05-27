@@ -335,36 +335,37 @@ type CourseRequestRulesVO struct {
 type StudentDataVO struct {
 	Activities             []*ActivityVO           `xml:"activities,omitempty"`
 	ArchivedFinalGrades    []*ArchivedFinalGradeVO `xml:"archivedFinalGrades,omitempty"`
-	AssignmentCategories   []*AsmtCatVO            `xml:"AsmtCatVO,omitempty"`
-	AssignmentScores       []*AssignmentScoreVO    `xml:"AssignmentScoreVO,omitempty"`
-	Assignments            []*AssignmentVO         `xml:"AssignmentVO,omitempty"`
-	Attendance             []*AttendanceVO         `xml:"AttendancVO,omitempty"`
-	AttendanceCodes        []*AttendanceCodeVO     `xml:"AttendanceCodeVO,omitempty"`
+	AssignmentCategories   []*AsmtCatVO            `xml:"assignmentCategories,omitempty"`
+	AssignmentScores       []*AssignmentScoreVO    `xml:"assignmentScores,omitempty"`
+	Assignments            []*AssignmentVO         `xml:"assignments,omitempty"`
+	Attendance             []*AttendanceVO         `xml:"attendance,omitempty"`
+	AttendanceCodes        []*AttendanceCodeVO     `xml:"attendanceCodes,omitempty"`
 	Bulletins              []*BulletinLite         `xml:"bulletins,omitempty"`
 	CitizenCodes           []*CitizenCodeVO        `xml:"citizenCodes,omitempty"`
 	CitizenGrades          []*CitizenGradeVO       `xml:"citizenGrades,omitempty"`
 	CourseRequests         []*CourseRequestVO      `xml:"courseRequests,omitempty"`
 	Enrollments            []*SectionEnrollmentVO  `xml:"enrollments,omitempty"`
+	Extension            string  `xml:"extension,omitempty"`
 	FeeBalance             *FeeBalanceVO           `xml:"feeBalance,omitempty"`
 	FeeTransactions        []*FeeTransactionVO     `xml:"feeTransactions,omitempty"`
 	FeeTypes               []*FeeTypeVO            `xml:"feeTypes,omitempty"`
-	FinalGrades            []*FinalGradeVO         `xml:"finalGradeVO,omitempty"`
+	FinalGrades            []*FinalGradeVO         `xml:"finalGrades,omitempty"`
 	GradeScales            []*GradeScaleVO         `xml:"gradeScales,omitempty"`
 	LunchTransactions      []*LunchTransactionVO   `xml:"lunchTransactions,omitempty"`
-	NotInSessionDays       []*NotInSessionDayVO    `xml:"notInSessionDayVO,omitempty"`
+	NotInSessionDays       []*NotInSessionDayVO    `xml:"notInSessionDays,omitempty"`
 	NotificationSettingsVO *NotificationSettingsVO `xml:"notificationSettingsVO,omitempty"`
-	Periods                []*PeriodVO             `xml:"PeriodVO,omitempty"`
+	Periods                []*PeriodVO             `xml:"periods,omitempty"`
 	RemoteSchools          []*SchoolVO             `xml:"remoteSchools,omitempty"`
-	ReportingTerms         []*ReportingTermVO      `xml:"ReportingTermsVO,omitempty"`
-	Schools                []*SchoolVO             `xml:"schoolVO,omitempty"`
-	Sections               []*SectionVO            `xml:"SectionVO,omitempty"`
+	ReportingTerms         []*ReportingTermVO      `xml:"reportingTerms,omitempty"`
+	Schools                []*SchoolVO             `xml:"schools,omitempty"`
+	Sections               []*SectionVO            `xml:"sections,omitempty"`
 	Standards              []*StandardVO           `xml:"standards,omitempty"`
 	StandardsGrades        []*StandardGradeVO      `xml:"standardsGrades,omitempty"`
 	Student                *StudentVO              `xml:"student,omitempty"`
 	StudentDcid            int64                   `xml:"studentDcid,omitempty"`
 	StudentId              int64                   `xml:"studentId,omitempty"`
-	Teachers               []*TeacherVO            `xml:"TeacherVO,omitempty"`
-	Terms                  []*TermVO               `xml:"TermVO,omitempty"`
+	Teachers               []*TeacherVO            `xml:"teachers,omitempty"`
+	Terms                  []*TermVO               `xml:"terms,omitempty"`
 	YearId                 int32                   `xml:"yearId,omitempty"`
 }
 
