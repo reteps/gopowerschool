@@ -849,7 +849,7 @@ type CredentialComplexityRulesVO struct {
 }
 
 type BulletinLite struct {
-	XMLName xml.Name `xml:"http://model.rest.powerschool.pearson.com/xsd BulletinLite" json:"-"`
+	XMLName xml.Name `xml:"bulletins" json:"-"`
 
 	Audience  int64     `xml:"audience,omitempty"`
 	Body      string    `xml:"body,omitempty"`
