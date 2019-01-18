@@ -332,26 +332,27 @@ type CourseRequestRulesVO struct {
 }
 
 type StudentDataVO struct {
-	Activities             []*ActivityVO           `xml:"activities,omitempty"`
-	ArchivedFinalGrades    []*ArchivedFinalGradeVO `xml:"archivedFinalGrades,omitempty"`
-	AssignmentCategories   []*AsmtCatVO            `xml:"assignmentCategories,omitempty"`
-	AssignmentScores       []*AssignmentScoreVO    `xml:"assignmentScores,omitempty"`
-	Assignments            []*AssignmentVO         `xml:"assignments,omitempty"`
-	Attendance             []*AttendanceVO         `xml:"attendance,omitempty"`
-	AttendanceCodes        []*AttendanceCodeVO     `xml:"attendanceCodes,omitempty"`
-	Bulletins              []*BulletinLite         `xml:"bulletins,omitempty"`
-	CitizenCodes           []*CitizenCodeVO        `xml:"citizenCodes,omitempty"`
-	CitizenGrades          []*CitizenGradeVO       `xml:"citizenGrades,omitempty"`
-	CourseRequests         []*CourseRequestVO      `xml:"courseRequests,omitempty"`
-	Enrollments            []*SectionEnrollmentVO  `xml:"enrollments,omitempty"`
-	Extension              string                  `xml:"extension,omitempty"`
-	FeeBalance             *FeeBalanceVO           `xml:"feeBalance,omitempty"`
-	FeeTransactions        []*FeeTransactionVO     `xml:"feeTransactions,omitempty"`
-	FeeTypes               []*FeeTypeVO            `xml:"feeTypes,omitempty"`
-	FinalGrades            []*FinalGradeVO         `xml:"finalGrades,omitempty"`
-	GradeScales            []*GradeScaleVO         `xml:"gradeScales,omitempty"`
-	LunchTransactions      []*LunchTransactionVO   `xml:"lunchTransactions,omitempty"`
-	NotInSessionDays       []*NotInSessionDayVO    `xml:"notInSessionDays,omitempty"`
+	Activities           []*ActivityVO           `xml:"activities,omitempty"`
+	ArchivedFinalGrades  []*ArchivedFinalGradeVO `xml:"archivedFinalGrades,omitempty"`
+	AssignmentCategories []*AsmtCatVO            `xml:"assignmentCategories,omitempty"`
+	AssignmentScores     []*AssignmentScoreVO    `xml:"assignmentScores,omitempty"`
+	Assignments          []*AssignmentVO         `xml:"assignments,omitempty"`
+	Attendance           []*AttendanceVO         `xml:"attendance,omitempty"`
+	AttendanceCodes      []*AttendanceCodeVO     `xml:"attendanceCodes,omitempty"`
+	Bulletins            []*BulletinLite         `xml:"bulletins,omitempty"`
+	CitizenCodes         []*CitizenCodeVO        `xml:"citizenCodes,omitempty"`
+	CitizenGrades        []*CitizenGradeVO       `xml:"citizenGrades,omitempty"`
+	CourseRequests       []*CourseRequestVO      `xml:"courseRequests,omitempty"`
+	Enrollments          []*SectionEnrollmentVO  `xml:"enrollments,omitempty"`
+	Extension            string                  `xml:"extension,omitempty"`
+	FeeBalance           *FeeBalanceVO           `xml:"feeBalance,omitempty"`
+	FeeTransactions      []*FeeTransactionVO     `xml:"feeTransactions,omitempty"`
+	FeeTypes             []*FeeTypeVO            `xml:"feeTypes,omitempty"`
+	FinalGrades          []*FinalGradeVO         `xml:"finalGrades,omitempty"`
+	GradeScales          []*GradeScaleVO         `xml:"gradeScales,omitempty"`
+	LunchTransactions    []*LunchTransactionVO   `xml:"lunchTransactions,omitempty"`
+	NotInSessionDays     []*NotInSessionDayVO    `xml:"notInSessionDays,omitempty"`
+
 	NotificationSettingsVO *NotificationSettingsVO `xml:"notificationSettingsVO,omitempty"`
 	Periods                []*PeriodVO             `xml:"periods,omitempty"`
 	RemoteSchools          []*SchoolVO             `xml:"remoteSchools,omitempty"`
@@ -359,13 +360,14 @@ type StudentDataVO struct {
 	Schools                []*SchoolVO             `xml:"schools,omitempty"`
 	Sections               []*SectionVO            `xml:"sections,omitempty"`
 	Standards              []*StandardVO           `xml:"standards,omitempty"`
-	StandardsGrades        []*StandardGradeVO      `xml:"standardsGrades,omitempty"`
-	Student                *StudentVO              `xml:"student,omitempty"`
-	StudentDcid            int64                   `xml:"studentDcid,omitempty"`
-	StudentId              int64                   `xml:"studentId,omitempty"`
-	Teachers               []*TeacherVO            `xml:"teachers,omitempty"`
-	Terms                  []*TermVO               `xml:"terms,omitempty"`
-	YearId                 int32                   `xml:"yearId,omitempty"`
+
+	StandardsGrades []*StandardGradeVO `xml:"standardsGrades,omitempty"`
+	Student         *StudentVO         `xml:"student,omitempty"`
+	StudentDcid     int64              `xml:"studentDcid,omitempty"`
+	StudentId       int64              `xml:"studentId,omitempty"`
+	Teachers        []*TeacherVO       `xml:"teachers,omitempty"`
+	Terms           []*TermVO          `xml:"terms,omitempty"`
+	YearId          int32              `xml:"yearId,omitempty"`
 }
 
 type ActivityVO struct {
@@ -395,16 +397,16 @@ type ArchivedFinalGradeVO struct {
 
 	*FinalGradeVO
 
-	CourseName    string    `xml:"courseName,omitempty"`
-	CourseNumber  string    `xml:"courseNumber,omitempty"`
-	SchoolId      int64     `xml:"schoolId,omitempty"`
-	SortOrder     int32     `xml:"sortOrder,omitempty"`
-	StoreCode     string    `xml:"storeCode,omitempty"`
-	TeacherName   string    `xml:"teacherName,omitempty"`
-	TermEndDate   time.Time `xml:"termEndDate,omitempty"`
-	TermId        int64     `xml:"termId,omitempty"`
-	TermStartDate time.Time `xml:"termStartDate,omitempty"`
-	YearId        int64     `xml:"yearId,omitempty"`
+	CourseName    string `xml:"courseName,omitempty"`
+	CourseNumber  string `xml:"courseNumber,omitempty"`
+	SchoolId      int64  `xml:"schoolId,omitempty"`
+	SortOrder     int32  `xml:"sortOrder,omitempty"`
+	StoreCode     string `xml:"storeCode,omitempty"`
+	TeacherName   string `xml:"teacherName,omitempty"`
+	TermEndDate   string `xml:"termEndDate,omitempty"`
+	TermId        int64  `xml:"termId,omitempty"`
+	TermStartDate string `xml:"termStartDate,omitempty"`
+	YearId        int64  `xml:"yearId,omitempty"`
 }
 
 type AsmtCatVO struct {
@@ -437,47 +439,47 @@ type AssignmentScoreVO struct {
 type AssignmentVO struct {
 	XMLName xml.Name `xml:"assignments" json:"-"`
 
-	Abbreviation          string    `xml:"abbreviation,omitempty"`
-	AdditionalCategoryIds []int32   `xml:"additionalCategoryIds,omitempty"`
-	Assignmentid          int64     `xml:"assignmentid,omitempty"`
-	CategoryId            int32     `xml:"categoryId,omitempty"`
-	Description           string    `xml:"description,omitempty"`
-	DueDate               time.Time `xml:"dueDate,omitempty"`
-	GradeBookType         int32     `xml:"gradeBookType,omitempty"`
-	Id                    int64     `xml:"id,omitempty"`
-	Includeinfinalgrades  int32     `xml:"includeinfinalgrades,omitempty"`
-	Name                  string    `xml:"name,omitempty"`
-	Pointspossible        float64   `xml:"pointspossible,omitempty"`
-	PublishDaysBeforeDue  int32     `xml:"publishDaysBeforeDue,omitempty"`
-	PublishState          int32     `xml:"publishState,omitempty"`
-	Publishonspecificdate string    `xml:"publishonspecificdate,omitempty"`
-	Publishscores         int32     `xml:"publishscores,omitempty"`
-	SectionDcid           int64     `xml:"sectionDcid,omitempty"`
-	Sectionid             int64     `xml:"sectionid,omitempty"`
-	Type_                 int32     `xml:"type,omitempty"`
-	Weight                float64   `xml:"weight,omitempty"`
+	Abbreviation          string  `xml:"abbreviation,omitempty"`
+	AdditionalCategoryIds []int32 `xml:"additionalCategoryIds,omitempty"`
+	Assignmentid          int64   `xml:"assignmentid,omitempty"`
+	CategoryId            int32   `xml:"categoryId,omitempty"`
+	Description           string  `xml:"description,omitempty"`
+	DueDate               string  `xml:"dueDate,omitempty"`
+	GradeBookType         int32   `xml:"gradeBookType,omitempty"`
+	Id                    int64   `xml:"id,omitempty"`
+	Includeinfinalgrades  int32   `xml:"includeinfinalgrades,omitempty"`
+	Name                  string  `xml:"name,omitempty"`
+	Pointspossible        float64 `xml:"pointspossible,omitempty"`
+	PublishDaysBeforeDue  int32   `xml:"publishDaysBeforeDue,omitempty"`
+	PublishState          int32   `xml:"publishState,omitempty"`
+	Publishonspecificdate string  `xml:"publishonspecificdate,omitempty"`
+	Publishscores         int32   `xml:"publishscores,omitempty"`
+	SectionDcid           int64   `xml:"sectionDcid,omitempty"`
+	Sectionid             int64   `xml:"sectionid,omitempty"`
+	Type_                 int32   `xml:"type,omitempty"`
+	Weight                float64 `xml:"weight,omitempty"`
 }
 
 type AttendanceVO struct {
 	XMLName xml.Name `xml:"attendance" json:"-"`
 
-	AdaValueCode    float64   `xml:"adaValueCode,omitempty"`
-	AdaValueTime    float64   `xml:"adaValueTime,omitempty"`
-	AdmValue        float64   `xml:"admValue,omitempty"`
-	AttCodeid       int64     `xml:"attCodeid,omitempty"`
-	AttComment      string    `xml:"attComment,omitempty"`
-	AttDate         time.Time `xml:"attDate,omitempty"`
-	AttFlags        int32     `xml:"attFlags,omitempty"`
-	AttInterval     int32     `xml:"attInterval,omitempty"`
-	AttModeCode     string    `xml:"attModeCode,omitempty"`
-	Ccid            int64     `xml:"ccid,omitempty"`
-	Id              int64     `xml:"id,omitempty"`
-	Periodid        int64     `xml:"periodid,omitempty"`
-	Schoolid        int64     `xml:"schoolid,omitempty"`
-	Studentid       int64     `xml:"studentid,omitempty"`
-	TotalMinutes    float64   `xml:"totalMinutes,omitempty"`
-	TransactionType string    `xml:"transactionType,omitempty"`
-	Yearid          int32     `xml:"yearid,omitempty"`
+	AdaValueCode    float64 `xml:"adaValueCode,omitempty"`
+	AdaValueTime    float64 `xml:"adaValueTime,omitempty"`
+	AdmValue        float64 `xml:"admValue,omitempty"`
+	AttCodeid       int64   `xml:"attCodeid,omitempty"`
+	AttComment      string  `xml:"attComment,omitempty"`
+	AttDate         string  `xml:"attDate,omitempty"`
+	AttFlags        int32   `xml:"attFlags,omitempty"`
+	AttInterval     int32   `xml:"attInterval,omitempty"`
+	AttModeCode     string  `xml:"attModeCode,omitempty"`
+	Ccid            int64   `xml:"ccid,omitempty"`
+	Id              int64   `xml:"id,omitempty"`
+	Periodid        int64   `xml:"periodid,omitempty"`
+	Schoolid        int64   `xml:"schoolid,omitempty"`
+	Studentid       int64   `xml:"studentid,omitempty"`
+	TotalMinutes    float64 `xml:"totalMinutes,omitempty"`
+	TransactionType string  `xml:"transactionType,omitempty"`
+	Yearid          int32   `xml:"yearid,omitempty"`
 }
 
 type AttendanceCodeVO struct {
@@ -513,10 +515,10 @@ type CitizenGradeVO struct {
 type SectionEnrollmentVO struct {
 	XMLName xml.Name `xml:"enrollments" json:"-"`
 
-	EndDate      time.Time `xml:"endDate,omitempty"`
-	EnrollStatus int32     `xml:"enrollStatus,omitempty"`
-	Id           int64     `xml:"id,omitempty"`
-	StartDate    time.Time `xml:"startDate,omitempty"`
+	EndDate      string `xml:"endDate,omitempty"`
+	EnrollStatus int32  `xml:"enrollStatus,omitempty"`
+	Id           int64  `xml:"id,omitempty"`
+	StartDate    string `xml:"startDate,omitempty"`
 }
 
 type FeeBalanceVO struct {
@@ -533,29 +535,29 @@ type FeeBalanceVO struct {
 type FeeTransactionVO struct {
 	XMLName xml.Name `xml:"feeTransactions" json:"-"`
 
-	Adjustment         float64   `xml:"adjustment,omitempty"`
-	CourseName         string    `xml:"courseName,omitempty"`
-	CourseNumber       string    `xml:"courseNumber,omitempty"`
-	Creationdate       time.Time `xml:"creationdate,omitempty"`
-	DateValue          time.Time `xml:"dateValue,omitempty"`
-	DepartmentName     string    `xml:"departmentName,omitempty"`
-	Description        string    `xml:"description,omitempty"`
-	FeeAmount          float64   `xml:"feeAmount,omitempty"`
-	FeeBalance         float64   `xml:"feeBalance,omitempty"`
-	FeeCategoryName    string    `xml:"feeCategoryName,omitempty"`
-	FeePaid            float64   `xml:"feePaid,omitempty"`
-	FeeTypeId          int64     `xml:"feeTypeId,omitempty"`
-	FeeTypeName        string    `xml:"feeTypeName,omitempty"`
-	Feecharged         float64   `xml:"feecharged,omitempty"`
-	GroupTransactionId int64     `xml:"groupTransactionId,omitempty"`
-	Id                 int64     `xml:"id,omitempty"`
-	Modificationdate   time.Time `xml:"modificationdate,omitempty"`
-	Originalfee        float64   `xml:"originalfee,omitempty"`
-	Priority           int32     `xml:"priority,omitempty"`
-	ProRated           int32     `xml:"proRated,omitempty"`
-	SchoolfeeId        int64     `xml:"schoolfeeId,omitempty"`
-	Schoolid           int64     `xml:"schoolid,omitempty"`
-	Termid             int64     `xml:"termid,omitempty"`
+	Adjustment         float64 `xml:"adjustment,omitempty"`
+	CourseName         string  `xml:"courseName,omitempty"`
+	CourseNumber       string  `xml:"courseNumber,omitempty"`
+	Creationdate       string  `xml:"creationdate,omitempty"`
+	DateValue          string  `xml:"dateValue,omitempty"`
+	DepartmentName     string  `xml:"departmentName,omitempty"`
+	Description        string  `xml:"description,omitempty"`
+	FeeAmount          float64 `xml:"feeAmount,omitempty"`
+	FeeBalance         float64 `xml:"feeBalance,omitempty"`
+	FeeCategoryName    string  `xml:"feeCategoryName,omitempty"`
+	FeePaid            float64 `xml:"feePaid,omitempty"`
+	FeeTypeId          int64   `xml:"feeTypeId,omitempty"`
+	FeeTypeName        string  `xml:"feeTypeName,omitempty"`
+	Feecharged         float64 `xml:"feecharged,omitempty"`
+	GroupTransactionId int64   `xml:"groupTransactionId,omitempty"`
+	Id                 int64   `xml:"id,omitempty"`
+	Modificationdate   string  `xml:"modificationdate,omitempty"`
+	Originalfee        float64 `xml:"originalfee,omitempty"`
+	Priority           int32   `xml:"priority,omitempty"`
+	ProRated           int32   `xml:"proRated,omitempty"`
+	SchoolfeeId        int64   `xml:"schoolfeeId,omitempty"`
+	Schoolid           int64   `xml:"schoolid,omitempty"`
+	Termid             int64   `xml:"termid,omitempty"`
 }
 
 type FeeTypeVO struct {
@@ -585,7 +587,7 @@ type GradeScaleVO struct {
 }
 
 type GradeScaleItemVO struct {
-	XMLName xml.Name `xml:"http://vo.rest.powerschool.pearson.com/xsd GradeScaleItemVO" json:"-"`
+	XMLName xml.Name `xml:"gradeScaleItems" json:"-"`
 
 	CutoffPercent     float64 `xml:"cutoffPercent,omitempty"`
 	DefaultZeroCutoff bool    `xml:"defaultZeroCutoff,omitempty"`
@@ -601,25 +603,25 @@ type GradeScaleItemVO struct {
 type LunchTransactionVO struct {
 	XMLName xml.Name `xml:"lunchTransactions" json:"-"`
 
-	Cash        float64   `xml:"cash,omitempty"`
-	Credit      float64   `xml:"credit,omitempty"`
-	DateValue   time.Time `xml:"dateValue,omitempty"`
-	Debit       float64   `xml:"debit,omitempty"`
-	Description string    `xml:"description,omitempty"`
-	Id          int64     `xml:"id,omitempty"`
-	Mealprice   float64   `xml:"mealprice,omitempty"`
-	Neteffect   float64   `xml:"neteffect,omitempty"`
-	Time        int32     `xml:"time,omitempty"`
+	Cash        float64 `xml:"cash,omitempty"`
+	Credit      float64 `xml:"credit,omitempty"`
+	DateValue   string  `xml:"dateValue,omitempty"`
+	Debit       float64 `xml:"debit,omitempty"`
+	Description string  `xml:"description,omitempty"`
+	Id          int64   `xml:"id,omitempty"`
+	Mealprice   float64 `xml:"mealprice,omitempty"`
+	Neteffect   float64 `xml:"neteffect,omitempty"`
+	Time        int32   `xml:"time,omitempty"`
 }
 
 type NotInSessionDayVO struct {
 	XMLName xml.Name `xml:"notInSessionDays" json:"-"`
 
-	CalType      string    `xml:"calType,omitempty"`
-	CalendarDay  time.Time `xml:"calendarDay,omitempty"`
-	Description  string    `xml:"description,omitempty"`
-	Id           int64     `xml:"id,omitempty"`
-	SchoolNumber int64     `xml:"schoolNumber,omitempty"`
+	CalType      string `xml:"calType,omitempty"`
+	CalendarDay  string `xml:"calendarDay,omitempty"`
+	Description  string `xml:"description,omitempty"`
+	Id           int64  `xml:"id,omitempty"`
+	SchoolNumber int64  `xml:"schoolNumber,omitempty"`
 }
 
 type NotificationSettingsVO struct {
@@ -692,18 +694,18 @@ type DisabledFeaturesVO struct {
 type ReportingTermVO struct {
 	XMLName xml.Name `xml:"reportingTerms" json:"-"`
 
-	Abbreviation     string    `xml:"abbreviation,omitempty"`
-	EndDate          time.Time `xml:"endDate,omitempty"`
-	Id               int64     `xml:"id,omitempty"`
-	Schoolid         int64     `xml:"schoolid,omitempty"`
-	SendingGrades    bool      `xml:"sendingGrades,omitempty"`
-	SortOrder        int32     `xml:"sortOrder,omitempty"`
-	StartDate        time.Time `xml:"startDate,omitempty"`
-	SuppressGrades   bool      `xml:"suppressGrades,omitempty"`
-	SuppressPercents bool      `xml:"suppressPercents,omitempty"`
-	Termid           int64     `xml:"termid,omitempty"`
-	Title            string    `xml:"title,omitempty"`
-	Yearid           int64     `xml:"yearid,omitempty"`
+	Abbreviation     string `xml:"abbreviation,omitempty"`
+	EndDate          string `xml:"endDate,omitempty"`
+	Id               int64  `xml:"id,omitempty"`
+	Schoolid         int64  `xml:"schoolid,omitempty"`
+	SendingGrades    bool   `xml:"sendingGrades,omitempty"`
+	SortOrder        int32  `xml:"sortOrder,omitempty"`
+	StartDate        string `xml:"startDate,omitempty"`
+	SuppressGrades   bool   `xml:"suppressGrades,omitempty"`
+	SuppressPercents bool   `xml:"suppressPercents,omitempty"`
+	Termid           int64  `xml:"termid,omitempty"`
+	Title            string `xml:"title,omitempty"`
+	Yearid           int64  `xml:"yearid,omitempty"`
 }
 
 type SectionVO struct {
@@ -729,9 +731,9 @@ type SectionVO struct {
 type StartStopDateVO struct {
 	XMLName xml.Name `xml:"startStopDates" json:"-"`
 
-	SectionEnrollmentId int64     `xml:"sectionEnrollmentId,omitempty"`
-	Start               time.Time `xml:"start,omitempty"`
-	Stop                time.Time `xml:"stop,omitempty"`
+	SectionEnrollmentId int64  `xml:"sectionEnrollmentId,omitempty"`
+	Start               string `xml:"start,omitempty"`
+	Stop                string `xml:"stop,omitempty"`
 }
 
 type StandardVO struct {
@@ -750,40 +752,40 @@ type StandardVO struct {
 type StandardGradeVO struct {
 	XMLName xml.Name `xml:"standardsGrades" json:"-"`
 
-	Comment            string    `xml:"comment,omitempty"`
-	CommentLastUpdated time.Time `xml:"commentLastUpdated,omitempty"`
-	Exempt             int32     `xml:"exempt,omitempty"`
-	GradeBookType      int32     `xml:"gradeBookType,omitempty"`
-	GradeEntered       string    `xml:"gradeEntered,omitempty"`
-	GradeLastUpdated   time.Time `xml:"gradeLastUpdated,omitempty"`
-	GradeType          int32     `xml:"gradeType,omitempty"`
-	Id                 int64     `xml:"id,omitempty"`
-	Late               int32     `xml:"late,omitempty"`
-	Missing            int32     `xml:"missing,omitempty"`
-	ReportingTermId    int64     `xml:"reportingTermId,omitempty"`
-	SectionDcid        int64     `xml:"sectionDcid,omitempty"`
-	SectionId          int64     `xml:"sectionId,omitempty"`
-	StandardId         int64     `xml:"standardId,omitempty"`
+	Comment            string `xml:"comment,omitempty"`
+	CommentLastUpdated string `xml:"commentLastUpdated,omitempty"`
+	Exempt             int32  `xml:"exempt,omitempty"`
+	GradeBookType      int32  `xml:"gradeBookType,omitempty"`
+	GradeEntered       string `xml:"gradeEntered,omitempty"`
+	GradeLastUpdated   string `xml:"gradeLastUpdated,omitempty"`
+	GradeType          int32  `xml:"gradeType,omitempty"`
+	Id                 int64  `xml:"id,omitempty"`
+	Late               int32  `xml:"late,omitempty"`
+	Missing            int32  `xml:"missing,omitempty"`
+	ReportingTermId    int64  `xml:"reportingTermId,omitempty"`
+	SectionDcid        int64  `xml:"sectionDcid,omitempty"`
+	SectionId          int64  `xml:"sectionId,omitempty"`
+	StandardId         int64  `xml:"standardId,omitempty"`
 }
 
 type StudentVO struct {
 	XMLName xml.Name `xml:"student" json:"-"`
 
-	CurrentGPA             string    `xml:"currentGPA,omitempty"`
-	CurrentMealBalance     float64   `xml:"currentMealBalance,omitempty"`
-	CurrentTerm            string    `xml:"currentTerm,omitempty"`
-	Dcid                   int64     `xml:"dcid,omitempty"`
-	Dob                    time.Time `xml:"dob,omitempty"`
-	Ethnicity              string    `xml:"ethnicity,omitempty"`
-	FirstName              string    `xml:"firstName,omitempty"`
-	Gender                 string    `xml:"gender,omitempty"`
-	GradeLevel             int32     `xml:"gradeLevel,omitempty"`
-	GuardianAccessDisabled bool      `xml:"guardianAccessDisabled,omitempty"`
-	Id                     int64     `xml:"id,omitempty"`
-	LastName               string    `xml:"lastName,omitempty"`
-	MiddleName             string    `xml:"middleName,omitempty"`
-	PhotoDate              time.Time `xml:"photoDate,omitempty"`
-	StartingMealBalance    float64   `xml:"startingMealBalance,omitempty"`
+	CurrentGPA             string  `xml:"currentGPA,omitempty"`
+	CurrentMealBalance     float64 `xml:"currentMealBalance,omitempty"`
+	CurrentTerm            string  `xml:"currentTerm,omitempty"`
+	Dcid                   int64   `xml:"dcid,omitempty"`
+	Dob                    string  `xml:"dob,omitempty"`
+	Ethnicity              string  `xml:"ethnicity,omitempty"`
+	FirstName              string  `xml:"firstName,omitempty"`
+	Gender                 string  `xml:"gender,omitempty"`
+	GradeLevel             int32   `xml:"gradeLevel,omitempty"`
+	GuardianAccessDisabled bool    `xml:"guardianAccessDisabled,omitempty"`
+	Id                     int64   `xml:"id,omitempty"`
+	LastName               string  `xml:"lastName,omitempty"`
+	MiddleName             string  `xml:"middleName,omitempty"`
+	PhotoDate              string  `xml:"photoDate,omitempty"`
+	StartingMealBalance    float64 `xml:"startingMealBalance,omitempty"`
 }
 
 type TeacherVO struct {
@@ -799,20 +801,20 @@ type TeacherVO struct {
 type TermVO struct {
 	XMLName xml.Name `xml:"terms" json:"-"`
 
-	Abbrev       string    `xml:"abbrev,omitempty"`
-	EndDate      time.Time `xml:"endDate,omitempty"`
-	Id           int64     `xml:"id,omitempty"`
-	ParentTermId int64     `xml:"parentTermId,omitempty"`
-	SchoolNumber string    `xml:"schoolNumber,omitempty"`
-	StartDate    time.Time `xml:"startDate,omitempty"`
-	Title        string    `xml:"title,omitempty"`
+	Abbrev       string `xml:"abbrev,omitempty"`
+	EndDate      string `xml:"endDate,omitempty"`
+	Id           int64  `xml:"id,omitempty"`
+	ParentTermId int64  `xml:"parentTermId,omitempty"`
+	SchoolNumber string `xml:"schoolNumber,omitempty"`
+	StartDate    string `xml:"startDate,omitempty"`
+	Title        string `xml:"title,omitempty"`
 }
 
 type UserSessionVO struct {
 	XMLName xml.Name `xml:"userSessionVO" json:"-"`
 
 	Locale            *Locale     `xml:"locale,omitempty"`
-	ServerCurrentTime time.Time   `xml:"serverCurrentTime,omitempty"`
+	ServerCurrentTime string      `xml:"serverCurrentTime,omitempty"`
 	ServerInfo        *ServerInfo `xml:"serverInfo,omitempty"`
 	ServiceTicket     string      `xml:"serviceTicket,omitempty"`
 	StudentIDs        []int32     `xml:"studentIDs,omitempty"`
@@ -851,29 +853,29 @@ type CredentialComplexityRulesVO struct {
 type BulletinLite struct {
 	XMLName xml.Name `xml:"bulletins" json:"-"`
 
-	Audience  int64     `xml:"audience,omitempty"`
-	Body      string    `xml:"body,omitempty"`
-	EndDate   time.Time `xml:"endDate,omitempty"`
-	Id        int64     `xml:"id,omitempty"`
-	Name      string    `xml:"name,omitempty"`
-	SchoolId  int64     `xml:"schoolId,omitempty"`
-	SortOrder int32     `xml:"sortOrder,omitempty"`
-	StartDate time.Time `xml:"startDate,omitempty"`
+	Audience  int64  `xml:"audience,omitempty"`
+	Body      string `xml:"body,omitempty"`
+	EndDate   string `xml:"endDate,omitempty"`
+	Id        int64  `xml:"id,omitempty"`
+	Name      string `xml:"name,omitempty"`
+	SchoolId  int64  `xml:"schoolId,omitempty"`
+	SortOrder int32  `xml:"sortOrder,omitempty"`
+	StartDate string `xml:"startDate,omitempty"`
 }
 
 type ServerInfo struct {
 	XMLName xml.Name `xml:"serverInfo" json:"-"`
 
-	ApiVersion                  string    `xml:"apiVersion,omitempty"`
-	DayLightSavings             int32     `xml:"dayLightSavings,omitempty"`
-	ParentSAMLEndPoint          string    `xml:"parentSAMLEndPoint,omitempty"`
-	PublicPortalDisabled        bool      `xml:"publicPortalDisabled,omitempty"`
-	PublicPortalDisabledMessage string    `xml:"publicPortalDisabledMessage,omitempty"`
-	RawOffset                   int32     `xml:"rawOffset,omitempty"`
-	ServerTime                  time.Time `xml:"serverTime,omitempty"`
-	StudentSAMLEndPoint         string    `xml:"studentSAMLEndPoint,omitempty"`
-	TeacherSAMLEndPoint         string    `xml:"teacherSAMLEndPoint,omitempty"`
-	TimeZoneName                string    `xml:"timeZoneName,omitempty"`
+	ApiVersion                  string `xml:"apiVersion,omitempty"`
+	DayLightSavings             int32  `xml:"dayLightSavings,omitempty"`
+	ParentSAMLEndPoint          string `xml:"parentSAMLEndPoint,omitempty"`
+	PublicPortalDisabled        bool   `xml:"publicPortalDisabled,omitempty"`
+	PublicPortalDisabledMessage string `xml:"publicPortalDisabledMessage,omitempty"`
+	RawOffset                   int32  `xml:"rawOffset,omitempty"`
+	ServerTime                  string `xml:"serverTime,omitempty"`
+	StudentSAMLEndPoint         string `xml:"studentSAMLEndPoint,omitempty"`
+	TeacherSAMLEndPoint         string `xml:"teacherSAMLEndPoint,omitempty"`
+	TimeZoneName                string `xml:"timeZoneName,omitempty"`
 }
 
 type PublicPortalServiceJSONPortType struct {
