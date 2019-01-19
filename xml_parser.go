@@ -439,25 +439,25 @@ type AssignmentScoreVO struct {
 type AssignmentVO struct {
 	XMLName xml.Name `xml:"assignments" json:"-"`
 
-	Abbreviation          string  `xml:"abbreviation,omitempty"`
-	AdditionalCategoryIds []int32 `xml:"additionalCategoryIds,omitempty"`
-	Assignmentid          int64   `xml:"assignmentid,omitempty"`
-	CategoryId            int32   `xml:"categoryId,omitempty"`
-	Description           string  `xml:"description,omitempty"`
-	DueDate               string  `xml:"dueDate,omitempty"`
-	GradeBookType         int32   `xml:"gradeBookType,omitempty"`
-	Id                    int64   `xml:"id,omitempty"`
-	Includeinfinalgrades  int32   `xml:"includeinfinalgrades,omitempty"`
-	Name                  string  `xml:"name,omitempty"`
-	Pointspossible        float64 `xml:"pointspossible,omitempty"`
-	PublishDaysBeforeDue  int32   `xml:"publishDaysBeforeDue,omitempty"`
-	PublishState          int32   `xml:"publishState,omitempty"`
-	Publishonspecificdate string  `xml:"publishonspecificdate,omitempty"`
-	Publishscores         int32   `xml:"publishscores,omitempty"`
-	SectionDcid           int64   `xml:"sectionDcid,omitempty"`
-	Sectionid             int64   `xml:"sectionid,omitempty"`
-	Type_                 int32   `xml:"type,omitempty"`
-	Weight                float64 `xml:"weight,omitempty"`
+	Abbreviation          string    `xml:"abbreviation,omitempty"`
+	AdditionalCategoryIds []int32   `xml:"additionalCategoryIds,omitempty"`
+	Assignmentid          int64     `xml:"assignmentid,omitempty"`
+	CategoryId            int32     `xml:"categoryId,omitempty"`
+	Description           string    `xml:"description,omitempty"`
+	DueDate               time.Time `xml:"dueDate,omitempty"`
+	GradeBookType         int32     `xml:"gradeBookType,omitempty"`
+	Id                    int64     `xml:"id,omitempty"`
+	Includeinfinalgrades  int32     `xml:"includeinfinalgrades,omitempty"`
+	Name                  string    `xml:"name,omitempty"`
+	Pointspossible        float64   `xml:"pointspossible,omitempty"`
+	PublishDaysBeforeDue  int32     `xml:"publishDaysBeforeDue,omitempty"`
+	PublishState          int32     `xml:"publishState,omitempty"`
+	Publishonspecificdate string    `xml:"publishonspecificdate,omitempty"`
+	Publishscores         int32     `xml:"publishscores,omitempty"`
+	SectionDcid           int64     `xml:"sectionDcid,omitempty"`
+	Sectionid             int64     `xml:"sectionid,omitempty"`
+	Type_                 int32     `xml:"type,omitempty"`
+	Weight                float64   `xml:"weight,omitempty"`
 }
 
 type AttendanceVO struct {
@@ -694,18 +694,18 @@ type DisabledFeaturesVO struct {
 type ReportingTermVO struct {
 	XMLName xml.Name `xml:"reportingTerms" json:"-"`
 
-	Abbreviation     string `xml:"abbreviation,omitempty"`
-	EndDate          string `xml:"endDate,omitempty"`
-	Id               int64  `xml:"id,omitempty"`
-	Schoolid         int64  `xml:"schoolid,omitempty"`
-	SendingGrades    bool   `xml:"sendingGrades,omitempty"`
-	SortOrder        int32  `xml:"sortOrder,omitempty"`
-	StartDate        string `xml:"startDate,omitempty"`
-	SuppressGrades   bool   `xml:"suppressGrades,omitempty"`
-	SuppressPercents bool   `xml:"suppressPercents,omitempty"`
-	Termid           int64  `xml:"termid,omitempty"`
-	Title            string `xml:"title,omitempty"`
-	Yearid           int64  `xml:"yearid,omitempty"`
+	Abbreviation     string    `xml:"abbreviation,omitempty"`
+	EndDate          time.Time `xml:"endDate,omitempty"`
+	Id               int64     `xml:"id,omitempty"`
+	Schoolid         int64     `xml:"schoolid,omitempty"`
+	SendingGrades    bool      `xml:"sendingGrades,omitempty"`
+	SortOrder        int32     `xml:"sortOrder,omitempty"`
+	StartDate        time.Time `xml:"startDate,omitempty"`
+	SuppressGrades   bool      `xml:"suppressGrades,omitempty"`
+	SuppressPercents bool      `xml:"suppressPercents,omitempty"`
+	Termid           int64     `xml:"termid,omitempty"`
+	Title            string    `xml:"title,omitempty"`
+	Yearid           int64     `xml:"yearid,omitempty"`
 }
 
 type SectionVO struct {
