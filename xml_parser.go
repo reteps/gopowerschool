@@ -355,11 +355,11 @@ type StudentDataVO struct {
 
 	NotificationSettingsVO *NotificationSettingsVO `xml:"notificationSettingsVO,omitempty"`
 	Periods                []*PeriodVO             `xml:"periods,omitempty"`
-	RemoteSchools          []*SchoolVO             `xml:"remoteSchools,omitempty"`
-	ReportingTerms         []*ReportingTermVO      `xml:"reportingTerms,omitempty"`
-	Schools                []*SchoolVO             `xml:"schools,omitempty"`
-	Sections               []*SectionVO            `xml:"sections,omitempty"`
-	Standards              []*StandardVO           `xml:"standards,omitempty"`
+	//RemoteSchools          []*SchoolVO             `xml:"remoteSchools,omitempty"`
+	ReportingTerms []*ReportingTermVO `xml:"reportingTerms,omitempty"`
+	Schools        []*SchoolVO        `xml:"schools,omitempty"`
+	Sections       []*SectionVO       `xml:"sections,omitempty"`
+	Standards      []*StandardVO      `xml:"standards,omitempty"`
 
 	StandardsGrades []*StandardGradeVO `xml:"standardsGrades,omitempty"`
 	Student         *StudentVO         `xml:"student,omitempty"`
